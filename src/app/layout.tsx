@@ -16,7 +16,7 @@ const mono = JetBrains_Mono({
   display: 'swap',
 })
 
-const SITE_URL = 'https://gauthamprabhum.github.io'
+const SITE_URL = 'https://gauthamprabhum.github.io/Research-Portfolio-Website'
 const description =
   'Gautham Manuru Prabhu — machine learning researcher working on efficient and scalable learning over structured, time-evolving data (graph & temporal graph neural networks). MS/PhD applicant in computer science.'
 
