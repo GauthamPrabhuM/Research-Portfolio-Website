@@ -17,9 +17,9 @@ export function Projects() {
   return (
     <Section
       id="projects"
-      eyebrow="Featured Research"
+      eyebrow="Research Projects"
       title="Selected projects"
-      intro="Framed by motivation, approach, and contribution — the questions matter more than the demos."
+      intro="Each stated in terms of its motivation, methods, and contribution."
     >
       <div className="divide-y divide-border">
         {PROJECTS.map((project, i) => (

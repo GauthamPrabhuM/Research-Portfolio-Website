@@ -18,7 +18,7 @@ const mono = JetBrains_Mono({
 
 const SITE_URL = 'https://gauthamprabhum.github.io/Research-Portfolio-Website'
 const description =
-  'Gautham Manuru Prabhu — machine learning researcher working on efficient and scalable learning over structured, time-evolving data (graph & temporal graph neural networks). MS/PhD applicant in computer science.'
+  'Gautham Manuru Prabhu — machine learning researcher studying scalable representation learning on graphs, with a focus on the efficiency of temporal graph neural networks. PhD applicant in computer science.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

@@ -4,7 +4,7 @@ import { FadeIn } from '@/components/ui/fade-in'
 
 export function Research() {
   return (
-    <Section id="research" eyebrow="Research Statement" title="A research journey">
+    <Section id="research" eyebrow="Research" title="Research statement">
       <div className="max-w-prose">
         {/* Lead — the thesis question, set slightly larger */}
         <FadeIn>

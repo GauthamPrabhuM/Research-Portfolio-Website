@@ -52,7 +52,7 @@ export function Experience() {
       id="experience"
       eyebrow="Experience"
       title="Research & professional experience"
-      intro="Research first; engineering as applied research and research-to-production."
+      intro="Research positions first; industry work framed as applied machine learning and research-to-production."
     >
       <GroupHeading>Research</GroupHeading>
       <div className="divide-y divide-border">
