@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 24% 12%;
+
+    --muted: 220 16% 96%;
+    --muted-foreground: 220 9% 42%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 24% 12%;
+
+    --primary: 222 24% 14%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Restrained scholarly accent — deep teal/blue */
+    --accent: 196 64% 34%;
+    --accent-foreground: 0 0% 100%;
+
+    --border: 220 14% 90%;
+    --input: 220 14% 90%;
+    --ring: 196 64% 34%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 28% 8%;
+    --foreground: 210 20% 92%;
+
+    --muted: 220 18% 16%;
+    --muted-foreground: 218 14% 62%;
+
+    --card: 222 26% 11%;
+    --card-foreground: 210 20% 92%;
+
+    --primary: 210 20% 92%;
+    --primary-foreground: 222 28% 8%;
+
+    --accent: 195 70% 56%;
+    --accent-foreground: 222 28% 8%;
+
+    --border: 220 16% 22%;
+    --input: 220 16% 22%;
+    --ring: 195 70% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: normal;
+  }
+
+  ::selection {
+    @apply bg-accent/20;
+  }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Focus ring for keyboard users */
+  .focus-ring {
+    @apply outline-none ring-offset-2 ring-offset-background focus-visible:ring-2 focus-visible:ring-ring;
+  }
+
+  .link-underline {
+    @apply underline decoration-accent/40 decoration-1 underline-offset-[3px] transition-colors hover:decoration-accent;
+  }
+}
