@@ -62,25 +62,6 @@ export const NARRATIVE = {
     'Looking ahead, I want to work on the efficiency frontier of graph and temporal representation learning — training methods, memory-efficient architectures, and principled scaling for dynamic relational data — alongside the systems questions that decide whether those methods reach real use.',
 }
 
-// ── Recurring research threads (themes) ──────────────────────────────────────
-export const THREADS = [
-  {
-    title: 'Graph & Temporal Representation Learning',
-    body: 'Learning over relational and time-evolving structure — the methodological core of my current TGNN work.',
-    evidence: 'MiCoSys (TGNNs) · Misinformation propagation modeling',
-  },
-  {
-    title: 'Efficiency & Scalability',
-    body: 'Reducing the compute and memory cost of learning, from tensor decomposition to memory-efficient training.',
-    evidence: 'TGNN training · SatelTensor · ML systems at Cisco',
-  },
-  {
-    title: 'Representation Learning under Constraints',
-    body: 'Extracting robust representations from scarce, noisy, high-stakes data.',
-    evidence: 'OCT anomaly detection · Retinal segmentation · Quantum ML',
-  },
-]
-
 // ── Publications ─────────────────────────────────────────────────────────────
 // `selected` surfaces a paper as a highlighted entry. `role` notes contribution
 // where it strengthens the research story.

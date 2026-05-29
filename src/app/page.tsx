@@ -14,8 +14,6 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
-        {/* Thin divider rhythm between the lead and the body sections */}
-        <div className="border-t border-border/60" />
         <Research />
         <Publications />
         <Projects />

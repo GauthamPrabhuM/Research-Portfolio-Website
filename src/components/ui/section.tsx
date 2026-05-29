@@ -11,23 +11,23 @@ type SectionProps = {
   className?: string
 }
 
-/** Standard anchored content section with a consistent academic header. */
+/** Anchored content section: hairline top rule, quiet header, single measure. */
 export function Section({ id, eyebrow, title, intro, children, className }: SectionProps) {
   return (
-    <section id={id} className={cn('scroll-mt-20 py-16 sm:py-20', className)}>
-      <div className="container">
+    <section id={id} className={cn('scroll-mt-24 border-t border-border py-14 sm:py-20', className)}>
+      <div className="wrap">
         <FadeIn>
-          <header className="mb-10 max-w-prose">
+          <header className="mb-9">
             {eyebrow ? (
-              <p className="mb-2 font-mono text-xs uppercase tracking-[0.18em] text-accent">
+              <p className="mb-2.5 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
                 {eyebrow}
               </p>
             ) : null}
-            <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+            <h2 className="text-pretty text-xl font-semibold tracking-tight text-foreground sm:text-[1.6rem]">
               {title}
             </h2>
             {intro ? (
-              <p className="mt-3 text-pretty text-[15px] leading-relaxed text-muted-foreground">
+              <p className="mt-3 max-w-prose text-pretty text-[15px] leading-relaxed text-muted-foreground">
                 {intro}
               </p>
             ) : null}

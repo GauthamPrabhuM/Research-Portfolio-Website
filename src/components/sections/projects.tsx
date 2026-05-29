@@ -1,16 +1,15 @@
-import { ArrowUpRight } from 'lucide-react'
 import { PROJECTS } from '@/lib/data'
 import { Section } from '@/components/ui/section'
-import { Card, CardContent } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { FadeIn } from '@/components/ui/fade-in'
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div>
-      <p className="font-mono text-[11px] uppercase tracking-wider text-accent">{label}</p>
-      <p className="mt-1 text-sm leading-relaxed text-foreground/85">{children}</p>
-    </div>
+    <p className="text-pretty text-sm leading-relaxed text-foreground/85">
+      <span className="font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
+        {label}.{' '}
+      </span>
+      {children}
+    </p>
   )
 }
 
@@ -19,55 +18,50 @@ export function Projects() {
     <Section
       id="projects"
       eyebrow="Featured Research"
-      title="Selected research projects"
-      intro="Each framed by its motivation, approach, and contribution — the questions matter more than the demos."
+      title="Selected projects"
+      intro="Framed by motivation, approach, and contribution — the questions matter more than the demos."
     >
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="divide-y divide-border">
         {PROJECTS.map((project, i) => (
-          <FadeIn as="article" key={project.id} delay={Math.min(i * 0.05, 0.2)}>
-            <Card className="flex h-full flex-col hover:border-accent/40">
-              <CardContent className="flex h-full flex-col p-6">
-                <div className="flex items-center justify-between gap-3">
-                  <Badge variant="outline">{project.status}</Badge>
-                  <span className="font-mono text-xs text-muted-foreground">
-                    {project.period}
-                  </span>
-                </div>
-
-                <h3 className="mt-3 text-pretty text-lg font-semibold leading-snug text-foreground">
+          <FadeIn as="div" key={project.id} delay={Math.min(i * 0.04, 0.16)}>
+            <article className="py-7 first:pt-0">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h3 className="text-pretty text-[1.05rem] font-semibold tracking-tight text-foreground">
                   {project.title}
                 </h3>
+                <span className="font-mono text-[13px] text-muted-foreground">
+                  {project.period}
+                </span>
+              </div>
 
-                <div className="mt-4 space-y-3.5">
-                  <Field label="Motivation">{project.motivation}</Field>
-                  <Field label="Approach">{project.approach}</Field>
-                  <Field label="Contribution">{project.contribution}</Field>
-                </div>
+              <p className="mt-0.5 text-[13px] text-accent">{project.status}</p>
 
-                <div className="mt-5 flex flex-wrap gap-1.5">
-                  {project.stack.map((s) => (
-                    <Badge key={s}>{s}</Badge>
+              <div className="mt-3 space-y-2">
+                <Row label="Motivation">{project.motivation}</Row>
+                <Row label="Approach">{project.approach}</Row>
+                <Row label="Contribution">{project.contribution}</Row>
+              </div>
+
+              <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">
+                {project.stack.join(' · ')}
+              </p>
+
+              {project.links.length > 0 ? (
+                <p className="mt-2 flex flex-wrap gap-x-4 text-[13px]">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="focus-ring link-accent rounded-sm"
+                    >
+                      {link.label} ↗
+                    </a>
                   ))}
-                </div>
-
-                {project.links.length > 0 ? (
-                  <div className="mt-5 flex flex-wrap gap-4 border-t border-border pt-4">
-                    {project.links.map((link) => (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="focus-ring group inline-flex items-center gap-1 rounded text-sm font-medium text-foreground"
-                      >
-                        {link.label}
-                        <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-accent" />
-                      </a>
-                    ))}
-                  </div>
-                ) : null}
-              </CardContent>
-            </Card>
+                </p>
+              ) : null}
+            </article>
           </FadeIn>
         ))}
       </div>
