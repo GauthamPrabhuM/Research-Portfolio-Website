@@ -34,12 +34,12 @@ export function Nav() {
           {PROFILE.shortName}
         </a>
 
-        <div className="hidden items-center gap-5 md:flex">
+        <div className="hidden items-center gap-4 md:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="focus-ring rounded-sm text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="focus-ring rounded-sm text-[13px] text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
             </a>
@@ -48,7 +48,7 @@ export function Nav() {
             href={asset(PROFILE.links.cv)}
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring rounded-sm text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="focus-ring rounded-sm text-[13px] text-muted-foreground transition-colors hover:text-foreground"
           >
             CV
           </a>

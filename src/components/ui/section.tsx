@@ -23,7 +23,7 @@ export function Section({ id, eyebrow, title, intro, children, className }: Sect
                 {eyebrow}
               </p>
             ) : null}
-            <h2 className="text-pretty text-xl font-semibold tracking-tight text-foreground sm:text-[1.6rem]">
+            <h2 className="text-pretty font-serif text-[1.45rem] font-medium tracking-tight text-foreground sm:text-[1.8rem]">
               {title}
             </h2>
             {intro ? (

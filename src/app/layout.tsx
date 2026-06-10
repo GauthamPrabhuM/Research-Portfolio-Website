@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono, Newsreader } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { PROFILE, RESEARCH_INTERESTS } from '@/lib/data'
@@ -14,6 +14,18 @@ const mono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
   display: 'swap',
+})
+
+// Scholarly serif for headings and the research narrative — the typographic
+// register of a printed journal rather than a product landing page.
+const serif = Newsreader({
+  subsets: ['latin'],
+  variable: '--font-serif',
+  style: ['normal', 'italic'],
+  display: 'swap',
+  // This Next version lacks built-in fallback metrics for Newsreader.
+  adjustFontFallback: false,
+  fallback: ['Georgia', 'serif'],
 })
 
 const SITE_URL = 'https://gauthamprabhum.github.io/Research-Portfolio-Website'
@@ -73,7 +85,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${sans.variable} ${mono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${sans.variable} ${mono.variable} ${serif.variable}`}>
       <body className="font-sans">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {/* Skip link for keyboard / screen-reader users */}

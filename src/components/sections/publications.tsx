@@ -1,6 +1,7 @@
 import { PUBLICATIONS, PROFILE } from '@/lib/data'
 import { Section } from '@/components/ui/section'
 import { FadeIn } from '@/components/ui/fade-in'
+import { Cite } from '@/components/ui/cite'
 import { cn } from '@/lib/utils'
 
 const ME = 'G. M. Prabhu'
@@ -26,15 +27,20 @@ export function Publications() {
       id="publications"
       eyebrow="Publications"
       title="Publications"
-      intro="Six peer-reviewed papers spanning journals, conferences, and workshops. Authored name in bold; ★ denotes selected work."
+      intro="Six peer-reviewed papers spanning journals, conferences, and workshops, listed in reverse chronological order. Authored name in bold; ★ denotes selected work."
     >
-      <ol className="space-y-7">
+      <ol className="space-y-8">
         {sorted.map((pub, i) => (
           <FadeIn as="li" key={pub.id} delay={Math.min(i * 0.03, 0.18)}>
             <div className="grid grid-cols-[2.75rem_1fr] gap-x-3">
-              {/* Left rail: year + selected marker */}
+              {/* Left rail: CV-style index + year + selected marker */}
               <div className="pt-0.5 text-right">
-                <span className="font-mono text-[13px] text-muted-foreground">{pub.year}</span>
+                <span className="block font-mono text-[13px] text-muted-foreground">
+                  [{sorted.length - i}]
+                </span>
+                <span className="mt-0.5 block font-mono text-[12px] text-muted-foreground/70">
+                  {pub.year}
+                </span>
                 {pub.selected ? (
                   <span className="mt-1 block text-[13px] leading-none text-accent" title="Selected">
                     ★
@@ -44,7 +50,7 @@ export function Publications() {
 
               {/* Reference body */}
               <div>
-                <h3 className="text-pretty font-medium leading-snug text-foreground">
+                <h3 className="text-pretty font-serif text-[1.08rem] font-medium leading-snug text-foreground">
                   {pub.link ? (
                     <a
                       href={pub.link}
@@ -71,30 +77,29 @@ export function Publications() {
 
                 <p className="mt-1.5 text-sm leading-relaxed text-foreground/70">{pub.note}</p>
 
-                {(pub.link || pub.doi) && (
-                  <p className="mt-1.5 flex flex-wrap gap-x-4 text-[13px]">
-                    {pub.link ? (
-                      <a
-                        href={pub.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="focus-ring link-accent rounded-sm"
-                      >
-                        Read paper ↗
-                      </a>
-                    ) : null}
-                    {pub.doi ? (
-                      <a
-                        href={`https://doi.org/${pub.doi}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="focus-ring link rounded-sm font-mono text-muted-foreground"
-                      >
-                        doi:{pub.doi}
-                      </a>
-                    ) : null}
-                  </p>
-                )}
+                <div className="mt-2 flex flex-wrap items-baseline gap-x-4 text-[13px]">
+                  {pub.link ? (
+                    <a
+                      href={pub.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="focus-ring link-accent rounded-sm"
+                    >
+                      Read paper ↗
+                    </a>
+                  ) : null}
+                  {pub.doi ? (
+                    <a
+                      href={`https://doi.org/${pub.doi}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="focus-ring link rounded-sm font-mono text-muted-foreground"
+                    >
+                      doi:{pub.doi}
+                    </a>
+                  ) : null}
+                  <Cite bibtex={pub.bibtex} />
+                </div>
               </div>
             </div>
           </FadeIn>

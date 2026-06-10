@@ -26,7 +26,7 @@ export function Projects() {
           <FadeIn as="div" key={project.id} delay={Math.min(i * 0.04, 0.16)}>
             <article className="py-7 first:pt-0">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h3 className="text-pretty text-[1.05rem] font-semibold tracking-tight text-foreground">
+                <h3 className="text-pretty font-serif text-[1.15rem] font-medium tracking-tight text-foreground">
                   {project.title}
                 </h3>
                 <span className="font-mono text-[13px] text-muted-foreground">

@@ -62,6 +62,88 @@ export const NARRATIVE = {
     'Looking ahead, I aim to work at the efficiency frontier of graph and temporal representation learning: training algorithms and architectures that make learning on large, dynamic, relational data tractable — through memory-efficient state representations, principled sampling and sparsification, and a clearer theoretical account of the trade-offs between expressivity, scalability, and generalization — together with the systems abstractions needed to bring such methods into practice.',
 }
 
+// ── Research questions ────────────────────────────────────────────────────────
+// The formal statement of the agenda — numbered, the way a thesis proposal
+// would state them. Rendered as a boxed list inside the research statement.
+export const RESEARCH_QUESTIONS = [
+  {
+    id: 'RQ1',
+    question:
+      'How much per-node memory state do temporal GNNs actually require to retain predictive accuracy on continuous-time dynamic graphs — and can that state be compressed, shared, or recomputed without loss?',
+  },
+  {
+    id: 'RQ2',
+    question:
+      'Can temporal neighborhood sampling be made principled rather than heuristic — which guarantees on the learned representation survive sparsification of the temporal computation graph?',
+  },
+  {
+    id: 'RQ3',
+    question:
+      'What is the formal trade-off between temporal expressivity and computational cost? Can the expressivity–efficiency frontier of dynamic graph models be characterized, and where on it do existing architectures sit?',
+  },
+] as const
+
+// ── News ─────────────────────────────────────────────────────────────────────
+// Reverse-chronological, dated, one line each — the canonical academic format.
+export const NEWS = [
+  {
+    date: 'Jun 2026',
+    text: 'Preparing applications to PhD programs in computer science (Fall 2027 entry), focused on efficient graph and temporal representation learning.',
+  },
+  {
+    date: 'Aug 2025',
+    text: 'Promoted to Software Engineer 2 (AI Acceleration) at Cisco — second promotion in 18 months.',
+  },
+  {
+    date: '2025',
+    text: 'Joined the MiCoSys Lab at San José State University as a Research Associate, working with Dr. Saptarishi Sengupta on the efficiency of temporal graph neural networks.',
+  },
+  {
+    date: 'Apr 2024',
+    text: 'Our paper on modeling vaccine-misinformation propagation over user-association graphs appeared in Procedia Computer Science (ICMLDE 2023).',
+  },
+  {
+    date: 'Dec 2023',
+    text: 'QuCardio — quantum machine learning for cardiovascular detection — published in IEEE Access (Q1). Now at 50+ citations.',
+  },
+  {
+    date: '2023',
+    text: 'Presented SatelTensor at the Tensor Computation & Machine Learning Workshop, IISc Bengaluru; selected for the ACM Winter School on Optimization for ML & OR at IIT Goa.',
+  },
+  {
+    date: 'Aug 2023',
+    text: 'Completed a deep learning research internship at the Medical Informatics Lab, IIT Kharagpur; presented at the Digital Health Symposium.',
+  },
+] as const
+
+// ── Talks & presentations ─────────────────────────────────────────────────────
+export const TALKS = [
+  {
+    title: 'SatelTensor: Satellite Data Exploration via Tensor Decomposition',
+    venue: 'Tensor Computation & Machine Learning (TCML) Workshop, IISc Bengaluru',
+    type: 'Contributed talk',
+    year: '2023',
+  },
+  {
+    title: 'Ensemble Feature Fusion for Anomaly Detection in Optical Coherence Tomography',
+    venue: 'Digital Health Symposium, IIT Kharagpur',
+    type: 'Research presentation',
+    year: '2023',
+  },
+  {
+    title: 'QuCardio: A Quantum Ecosystem for Cardiovascular Disease Detection',
+    venue: 'Global Quantum Science & Technology Hackathon — Grand Finale',
+    type: 'Finalist presentation',
+    year: '2022',
+  },
+  {
+    title: 'VIKAS: A Multimodal Framework for Disaster Management',
+    venue: 'Smart India Hackathon (NDRF track) — Grand Finale',
+    type: 'Finalist presentation',
+    year: '2022',
+  },
+] as const
+
 // ── Publications ─────────────────────────────────────────────────────────────
 // `selected` surfaces a paper as a highlighted entry. `role` notes contribution
 // where it strengthens the research story.
@@ -86,6 +168,15 @@ export const PUBLICATIONS = [
     citations: '50+',
     doi: '10.1109/ACCESS.2023.3338145',
     link: 'https://ieeexplore.ieee.org/document/10335179',
+    bibtex: `@article{prabhu2023qucardio,
+  author  = {Prabhu, S. and Gupta, S. and Prabhu, G. M. and Dhanuka, A. V. and Bhat, K. V.},
+  title   = {QuCardio: Application of Quantum Machine Learning for Detection of Cardiovascular Diseases},
+  journal = {IEEE Access},
+  volume  = {11},
+  pages   = {136122--136135},
+  year    = {2023},
+  doi     = {10.1109/ACCESS.2023.3338145}
+}`,
   },
   {
     id: 'vaccine',
@@ -107,6 +198,15 @@ export const PUBLICATIONS = [
     citations: null,
     doi: '10.1016/j.procs.2024.04.171',
     link: 'https://www.sciencedirect.com/science/article/pii/S1877050924008470',
+    bibtex: `@article{rao2024vaccine,
+  author  = {Rao, C. and Prabhu, G. M. and Kumar, A. R. and Gupta, S. and Shetty, N. P.},
+  title   = {Addressing Vaccine Misinformation on Social Media by Leveraging Transformers and User Association Dynamics},
+  journal = {Procedia Computer Science},
+  volume  = {235},
+  pages   = {1803--1813},
+  year    = {2024},
+  doi     = {10.1016/j.procs.2024.04.171}
+}`,
   },
   {
     id: 'vikas',
@@ -128,6 +228,15 @@ export const PUBLICATIONS = [
     citations: null,
     doi: '10.1007/978-981-99-2264-2_22',
     link: 'https://link.springer.com/chapter/10.1007/978-981-99-2264-2_22',
+    bibtex: `@inproceedings{prabhu2023vikas,
+  author    = {Prabhu, G. M. and Gupta, T. and Srujan, M. V. and Soumya, A. R. and Palorkar, A. and Chowdhury, A.},
+  title     = {VIKAS: A Multimodal Framework to Aid in Effective Disaster Management},
+  booktitle = {Applications and Techniques in Information Security (ATIS 2022), CCIS},
+  volume    = {1804},
+  publisher = {Springer},
+  year      = {2023},
+  doi       = {10.1007/978-981-99-2264-2_22}
+}`,
   },
   {
     id: 'eyeencrypt',
@@ -142,6 +251,15 @@ export const PUBLICATIONS = [
     citations: null,
     doi: '10.1007/978-981-99-2264-2_9',
     link: 'https://link.springer.com/chapter/10.1007/978-981-99-2264-2_9',
+    bibtex: `@inproceedings{hegde2023eyeencrypt,
+  author    = {Hegde, G. and Gupta, S. and Prabhu, G. M. and Bhandary, S. V.},
+  title     = {EyeEncrypt: A Cyber-Secured Framework for Retinal Image Segmentation},
+  booktitle = {Applications and Techniques in Information Security (ATIS 2022), CCIS},
+  volume    = {1804},
+  publisher = {Springer},
+  year      = {2023},
+  doi       = {10.1007/978-981-99-2264-2_9}
+}`,
   },
   {
     id: 'vessel-review',
@@ -157,6 +275,15 @@ export const PUBLICATIONS = [
     citations: null,
     doi: '10.1088/1742-6596/2571/1/012021',
     link: 'https://iopscience.iop.org/article/10.1088/1742-6596/2571/1/012021',
+    bibtex: `@article{hegde2023vesselreview,
+  author  = {Hegde, G. and Prabhu, S. and Gupta, S. and Prabhu, G. M. and others},
+  title   = {A Systematic Review of Deep Learning Approaches for Vessel Segmentation in Retinal Fundus Images},
+  journal = {Journal of Physics: Conference Series},
+  volume  = {2571},
+  pages   = {012021},
+  year    = {2023},
+  doi     = {10.1088/1742-6596/2571/1/012021}
+}`,
   },
   {
     id: 'sateltensor',
@@ -171,6 +298,12 @@ export const PUBLICATIONS = [
     citations: null,
     doi: null,
     link: null,
+    bibtex: `@misc{prabhu2023sateltensor,
+  author       = {Prabhu, G. M. and Gupta, S.},
+  title        = {SatelTensor: Satellite Data Exploration via Tensor Decomposition},
+  howpublished = {Tensor Computation \\& Machine Learning Workshop, IISc Bengaluru},
+  year         = {2023}
+}`,
   },
 ] as const
 
@@ -453,10 +586,20 @@ export const METHODS = [
 
 // ── Navigation ────────────────────────────────────────────────────────────────
 export const NAV_LINKS = [
+  { href: '#news', label: 'News' },
   { href: '#research', label: 'Research' },
   { href: '#publications', label: 'Publications' },
+  { href: '#talks', label: 'Talks' },
   { href: '#projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
   { href: '#achievements', label: 'Awards' },
   { href: '#contact', label: 'Contact' },
 ]
+
+// Compact scholarly metrics shown beneath the hero — kept factual.
+export const HERO_STATS = [
+  { value: '6', label: 'peer-reviewed publications' },
+  { value: '50+', label: 'citations (Google Scholar)' },
+  { value: '2', label: 'first-author papers' },
+  { value: '4', label: 'research groups · 3 institutions' },
+] as const
