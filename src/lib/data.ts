@@ -11,7 +11,7 @@ export const PROFILE = {
   // What I want to be read as, first line of the page.
   headline: 'Machine learning researcher',
   subhead:
-    'I study scalable representation learning on graphs. My current work concerns the efficiency of temporal graph neural networks — reducing the memory and computational cost of learning on large, dynamically evolving graphs without sacrificing temporal expressivity.',
+    'I work on making graph learning scale. Right now that means the efficiency of temporal graph neural networks — cutting the memory and compute cost of learning on large, constantly changing graphs without giving up the temporal detail that makes those models worth using.',
   currentLine:
     'Research Associate, MiCoSys Lab (San José State University) · Software Engineer 2, AI Acceleration at Cisco',
   location: 'Bengaluru, India',
@@ -39,27 +39,27 @@ export const RESEARCH_INTERESTS = [
 // admissions reader sees a trajectory, not a list.
 export const NARRATIVE = {
   thesis:
-    'My research is organized around a single question: how can models learn faithful representations of structured data — high-dimensional, relational, and evolving in time — under realistic constraints on computation and memory? This question sits at the intersection of representation learning, graph machine learning, and systems efficiency, and it connects my early work on quantum kernels and tensor methods to my present focus on temporal graph neural networks.',
+    'One question runs through all my work: how can a model learn faithful representations of data that is high-dimensional, relational, and changing over time — without demanding more computation and memory than we can actually afford? It runs from my early work on quantum kernels and tensor methods to what I do now with temporal graph neural networks, and it ties together the three things I keep coming back to: representation learning, graph machine learning, and the efficiency of the systems that run them.',
   paragraphs: [
     {
       heading: 'Structure as inductive bias',
-      body: 'My early research was unified by an interest in the structure that conventional pipelines discard. In QuCardio, I investigated whether quantum feature maps — which embed inputs into exponentially large Hilbert spaces — could induce class separations on ECG-derived signals that classical kernels could not, obtaining consistent gains over strong classical baselines. In SatelTensor, I took the complementary view, applying Tucker and CP decompositions to compress high-dimensional satellite tensors while preserving their latent spatial–temporal factors. The two projects approached one premise from opposite directions: that the geometry and low-rank structure of data are objects to be modeled explicitly, not nuisances to be flattened away.',
+      body: 'My early research kept coming back to the structure that conventional pipelines throw away. In QuCardio, I asked whether quantum feature maps — which embed inputs into exponentially large Hilbert spaces — could separate ECG-derived signals that classical kernels could not, and found consistent gains over strong classical baselines. SatelTensor came at the same idea from the other side: Tucker and CP decompositions to compress high-dimensional satellite tensors while keeping their spatial–temporal factors intact. Both rested on one belief — that the geometry and low-rank structure of data are worth modeling directly, not flattening away.',
     },
     {
       heading: 'Representation learning under constraints',
-      body: 'Later work made clear that representation learning is inseparable from the conditions under which it operates — limited labels, distribution shift, noisy acquisition, and, in clinical settings, asymmetric error costs. I developed ensemble feature-fusion methods for anomaly detection in optical coherence tomography and segmentation pipelines for retinal vasculature, where principled preprocessing and calibration mattered as much as model capacity. Studying the diffusion of vaccine misinformation moved me toward relational structure directly: rather than classifying posts in isolation, I modeled how content propagates over the graph of user interactions, coupling transformer-based text representations with the dynamics of the underlying network.',
+      body: 'Later projects taught me that you can\'t separate representation learning from the conditions it runs under — few labels, distribution shift, noisy data, and in clinical work, error costs that aren\'t symmetric. I built ensemble feature-fusion methods for anomaly detection in optical coherence tomography and segmentation pipelines for retinal vasculature, where careful preprocessing and calibration mattered as much as model capacity. Working on vaccine misinformation pushed me toward relational structure head-on: instead of classifying posts in isolation, I modeled how content spreads across the graph of user interactions, pairing transformer text representations with the dynamics of the network underneath.',
     },
     {
       heading: 'Toward graph and temporal learning',
-      body: 'These threads converge on graph machine learning. Relational dependencies, temporal evolution, and the imperative to learn efficiently from large, irregular data are precisely the difficulties that motivate graph neural networks — and, more acutely, temporal GNNs, in which the graph itself changes over time. This is the focus of my current research at MiCoSys, where I study the efficiency of training temporal GNNs: the memory cost of maintaining per-node state, the overhead of temporal neighborhood sampling, and the difficulty of scaling continuous-time models to graphs with millions of interactions. The governing tension is that the most expressive temporal models are often the least scalable; characterizing and narrowing this expressivity–efficiency gap is the problem I most want to pursue.',
+      body: 'All of these threads meet in graph machine learning. Relational dependencies, change over time, and the need to learn efficiently from large, irregular data are exactly what graph neural networks are built for — and even more so temporal GNNs, where the graph itself changes as you go. That is what I work on now at MiCoSys: the efficiency of training temporal GNNs — the memory cost of keeping per-node state, the overhead of sampling temporal neighborhoods, and the trouble of scaling continuous-time models to graphs with millions of interactions. The catch is that the most expressive temporal models tend to be the least scalable, and closing that expressivity–efficiency gap is the problem I most want to spend a PhD on.',
     },
     {
       heading: 'Grounded in systems',
-      body: 'My engineering practice informs this agenda rather than competing with it. At Cisco I build and operate machine-learning systems at production scale — retrieval, evaluation, and reliability for LLM-based agents under real workloads — which has given me a concrete account of what scalability costs in practice: latency and memory budgets, distribution drift, and the distance between benchmark performance and deployed behavior. I am seeking doctoral training that lets me pursue foundational questions in efficient graph learning while keeping this systems perspective.',
+      body: 'My day job feeds this rather than competing with it. At Cisco I build and run machine-learning systems at production scale — retrieval, evaluation, and reliability for LLM-based agents under real load — which has given me a concrete sense of what scalability actually costs: latency and memory budgets, distribution drift, and the gap between a good benchmark number and how a model behaves once it is deployed. I want a PhD that lets me chase the foundational questions in efficient graph learning without losing that systems view.',
     },
   ],
   future:
-    'Looking ahead, I aim to work at the efficiency frontier of graph and temporal representation learning: training algorithms and architectures that make learning on large, dynamic, relational data tractable — through memory-efficient state representations, principled sampling and sparsification, and a clearer theoretical account of the trade-offs between expressivity, scalability, and generalization — together with the systems abstractions needed to bring such methods into practice.',
+    'Going forward, I want to work at the efficiency frontier of graph and temporal representation learning: algorithms and architectures that make learning on large, dynamic, relational data actually tractable — memory-efficient state, principled sampling and sparsification, and a clearer theory of how expressivity, scalability, and generalization trade off against each other — along with the systems abstractions to get those methods into real use.',
 }
 
 // ── Research questions ────────────────────────────────────────────────────────
@@ -451,7 +451,7 @@ export const RESEARCH_EXPERIENCE = [
 // ── Professional experience (applied research / research-to-production) ───────
 export const PROFESSIONAL = {
   summary:
-    'Machine-learning systems in production — where the constraints that motivate my research on efficiency are most directly visible.',
+    'Machine-learning systems in production — where the efficiency constraints I care about in research tend to show up first, and loudest.',
   roles: [
     {
       title: 'Software Engineer 2 — AI Acceleration',

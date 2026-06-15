@@ -17,7 +17,7 @@ export function Contact() {
       id="contact"
       eyebrow="Get in touch"
       title="Contact"
-      intro="I am applying to PhD and research-focused master's programs in computer science, and welcome conversations about research directions, collaborations, and advising fit."
+      intro="I'm applying to PhD and research-focused master's programs in computer science for Fall 2027. I'm always glad to talk through research directions, possible collaborations, or whether we'd be a good advising fit — just reach out."
     >
       {/* Methods — compact, inline, supporting only */}
       <FadeIn>
